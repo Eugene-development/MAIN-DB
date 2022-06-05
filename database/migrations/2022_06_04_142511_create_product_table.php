@@ -20,9 +20,6 @@ return new class extends Migration
             $table->timestamps();
             $table->string('value', 255)->nullable();
 
-//            $table->string('productable_type', 255)->nullable();
-//            $table->string('productable_uuid', 255)->nullable();
-
             $table->uuidMorphs('productable');
         });
     }
