@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('category', function (Blueprint $table) {
-            $table->increments('inc');
-            $table->uuid('id');
+            $table->increments('id');
+            $table->uuid('uuid')->unique();
             $table->string('key', 255);
             $table->timestamps();
             $table->string('value', 255)->nullable();
