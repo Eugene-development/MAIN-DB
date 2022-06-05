@@ -15,13 +15,15 @@ return new class extends Migration
     {
         Schema::create('product', function (Blueprint $table) {
             $table->id();
-            $table->uuid('uuid')->unique();
+            $table->string('uuid')->primary();
             $table->string('key', 255);
             $table->timestamps();
             $table->string('value', 255)->nullable();
 
-            $table->string('productable_id', 255)->nullable();
-            $table->string('productable_type', 255)->nullable();
+//            $table->string('productable_type', 255)->nullable();
+//            $table->string('productable_uuid', 255)->nullable();
+
+            $table->uuidMorphs('productable');
         });
     }
 
