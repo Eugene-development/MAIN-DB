@@ -19,7 +19,7 @@ return new class extends Migration
             $table->uuid('key');
             $table->timestamps();
             $table->string('value', 255)->nullable();
-            $table->uuidMorphs('parentable')->nullable();
+            $table->uuidMorphs('parentable');
         });
     }
 
