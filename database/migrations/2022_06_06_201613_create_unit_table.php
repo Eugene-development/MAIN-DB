@@ -14,8 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('unit', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->uuid('uuid')->unique();
+            $table->string('key', 255);
             $table->timestamps();
+            $table->string('value', 255)->nullable();
+            $table->uuidMorphs('parentable')->nullable();
         });
     }
 

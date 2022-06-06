@@ -14,11 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('project', function (Blueprint $table) {
-//            $table->id();
-            $table->uuid('id')->primary();
-            $table->string('key', 255);
+            $table->increments('id');
+            $table->uuid('uuid')->unique();
+            $table->uuid('key');
             $table->timestamps();
             $table->string('value', 255)->nullable();
+            $table->uuidMorphs('parentable')->nullable();
         });
     }
 
