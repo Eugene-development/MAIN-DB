@@ -18,8 +18,11 @@ return new class extends Migration
             $table->uuid('uuid')->unique();
             $table->uuid('key');
             $table->timestamps();
-            $table->text('value')->nullable();
-            $table->uuidMorphs('parentable');
+            $table->string('value')->nullable();
+            $table->string('parentable_type', 255)->nullable();
+            $table->string('parentable_id', 255)->nullable();
+
+            //            $table->uuidMorphs('parentable');
         });
     }
 
