@@ -21,8 +21,6 @@ return new class extends Migration
             $table->string('value', 255)->nullable();
             $table->string('parentable_type', 255)->nullable();
             $table->string('parentable_id', 255)->nullable();
-
-            //            $table->uuidMorphs('parentable');
         });
     }
 

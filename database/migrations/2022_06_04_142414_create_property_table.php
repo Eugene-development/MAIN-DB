@@ -19,10 +19,10 @@ return new class extends Migration
             $table->uuid('key');
             $table->timestamps();
             $table->string('value')->nullable();
+            $table->string('slug', 255);
+            $table->boolean('active')->default(true);
             $table->string('parentable_type', 255)->nullable();
             $table->string('parentable_id', 255)->nullable();
-
-            //            $table->uuidMorphs('parentable');
         });
     }
 
