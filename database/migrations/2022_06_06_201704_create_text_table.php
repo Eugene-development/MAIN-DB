@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('text', function (Blueprint $table) {
             $table->increments('id');
-            $table->uuid('uuid')->unique();
             $table->uuid('key');
             $table->timestamps();
+            $table->text('value');
             $table->string('parentable_type', 255)->nullable();
             $table->string('parentable_id', 255)->nullable();
         });

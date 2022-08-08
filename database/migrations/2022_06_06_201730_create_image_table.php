@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('image', function (Blueprint $table) {
             $table->increments('id');
-            $table->uuid('uuid')->unique();
             $table->uuid('key');
             $table->timestamps();
             $table->string('hash', 255);

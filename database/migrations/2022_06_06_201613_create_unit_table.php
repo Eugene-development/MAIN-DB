@@ -15,8 +15,7 @@ return new class extends Migration
     {
         Schema::create('unit', function (Blueprint $table) {
             $table->increments('id');
-            $table->uuid('uuid')->unique();
-            $table->string('key', 255);
+            $table->uuid('key');
             $table->timestamps();
             $table->string('value', 255);
             $table->string('parentable_type', 255)->nullable();

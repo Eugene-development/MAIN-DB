@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('address', function (Blueprint $table) {
             $table->increments('id');
-            $table->uuid('uuid')->unique();
             $table->uuid('key');
             $table->timestamps();
             $table->string('value', 255);
