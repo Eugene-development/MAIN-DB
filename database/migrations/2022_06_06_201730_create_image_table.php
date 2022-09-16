@@ -16,11 +16,11 @@ return new class extends Migration
         Schema::create('image', function (Blueprint $table) {
             $table->increments('id');
             $table->uuid('key');
-            $table->timestamps();
             $table->string('hash', 255);
             $table->string('alt', 255);
             $table->string('parentable_type', 255)->nullable();
             $table->string('parentable_id', 255)->nullable();
+            $table->timestamps();
         });
     }
 

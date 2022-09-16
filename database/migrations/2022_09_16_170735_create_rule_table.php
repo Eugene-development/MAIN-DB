@@ -13,13 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('role', function (Blueprint $table) {
+        // TODO: $table->id(); ????
+        Schema::create('rule', function (Blueprint $table) {
             $table->increments('id');
             $table->uuid('key');
             $table->string('value', 255);
             $table->string('slug', 255);
-            $table->string('parentable_type', 255)->nullable();
-            $table->string('parentable_id', 255)->nullable();
+            $table->string('parentable_type', 255);
+            $table->string('parentable_id', 255);
             $table->timestamps();
         });
     }
@@ -31,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('role');
+        Schema::dropIfExists('rule');
     }
 };
