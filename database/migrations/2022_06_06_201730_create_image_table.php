@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('image', function (Blueprint $table) {
             $table->increments('id');
-            $table->uuid('key');
+            $table->uuid('key')->default('base');
             $table->boolean('is_active')->default(true);
             $table->string('hash', 255);
             $table->string('alt', 255);

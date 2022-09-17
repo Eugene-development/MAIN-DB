@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('seodescription', function (Blueprint $table) {
             $table->increments('id');
-            $table->uuid('key');
+            $table->uuid('key')->default('base');
             $table->boolean('is_active')->default(true);
             $table->string('value');
             $table->nullableMorphs('parentable');
