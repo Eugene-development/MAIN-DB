@@ -16,11 +16,13 @@ return new class extends Migration
         Schema::create('post', function (Blueprint $table) {
             $table->increments('id');
             $table->uuid('key');
+            $table->boolean('is_active')->default(true);
             $table->string('value', 255);
             $table->string('slug', 255);
             $table->string('parentable_type', 255)->nullable();
             $table->string('parentable_id', 255)->nullable();
             $table->timestamps();
+            $table->softDeletes($column = 'deleted_at', $precision = 0);
         });
     }
 

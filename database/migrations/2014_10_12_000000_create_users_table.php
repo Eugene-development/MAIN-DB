@@ -17,11 +17,13 @@ return new class extends Migration
             $table->id();
             $table->uuid('key');
             $table->string('name');
+            $table->boolean('is_active')->default(true);
             $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
             $table->timestamp('email_verified_at')->nullable();
+            $table->softDeletes($column = 'deleted_at', $precision = 0);
         });
     }
 
