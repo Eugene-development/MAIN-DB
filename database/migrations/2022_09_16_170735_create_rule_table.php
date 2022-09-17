@@ -20,8 +20,7 @@ return new class extends Migration
             $table->boolean('is_active')->default(true);
             $table->string('value', 255);
             $table->string('slug', 255);
-            $table->string('parentable_type', 255);
-            $table->string('parentable_id', 255);
+            $table->nullableMorphs('parentable');
             $table->timestamps();
             $table->softDeletes($column = 'deleted_at', $precision = 0);
         });

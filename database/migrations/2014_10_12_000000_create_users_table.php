@@ -15,12 +15,13 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->uuid('key');
+            $table->uuid('key')->default('base');
             $table->string('name');
             $table->boolean('is_active')->default(true);
             $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();
+            $table->nullableMorphs('parentable');
             $table->timestamps();
             $table->timestamp('email_verified_at')->nullable();
             $table->softDeletes($column = 'deleted_at', $precision = 0);

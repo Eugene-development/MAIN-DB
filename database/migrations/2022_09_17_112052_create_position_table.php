@@ -18,8 +18,7 @@ return new class extends Migration
             $table->uuid('key');
             $table->boolean('is_active')->default(true);
             $table->unsignedSmallInteger('value')->nullable()->default(0);
-            $table->string('parentable_type', 255)->nullable();
-            $table->string('parentable_id', 255)->nullable();
+            $table->nullableMorphs('parentable');
             $table->timestamps();
             $table->softDeletes($column = 'deleted_at', $precision = 0);
         });
