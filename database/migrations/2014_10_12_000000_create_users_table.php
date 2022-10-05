@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->uuid('key')->default('base');
             $table->string('name');
-            $table->boolean('is_active')->default(true);
+            $table->boolean('is_active')->default(false);
             $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();
